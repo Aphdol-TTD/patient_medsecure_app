@@ -3,7 +3,7 @@ import '../constants.dart';
 import '../widgets/customText.dart';
 
 class MenuScreenPage extends StatefulWidget {
-  const MenuScreenPage({Key? key});
+  const MenuScreenPage({super.key});
 
   @override
   _MenuScreenPageState createState() => _MenuScreenPageState();
@@ -19,17 +19,19 @@ class _MenuScreenPageState extends State<MenuScreenPage> {
       ),
       initialRoute: '/',
       routes: {
-        '/': (context) => AccueilPage(),
-        '/profil': (context) => ProfilPage(),
-        '/mondossier': (context) => MonDossierMedicalPage(),
-        '/codeQR': (context) => CodeQRPage(),
-        '/seDeconnecter': (context) => SeDeconnecterPage(),
+        '/': (context) => const AccueilPage(),
+        '/profil': (context) => const ProfilPage(),
+        '/mondossier': (context) => const DossierMedical(),
+        '/codeQR': (context) => const CodeQRPage(),
+        '/seDeconnecter': (context) => const SeDeconnecterPage(),
       },
     );
   }
 }
 
 class AccueilPage extends StatelessWidget {
+  const AccueilPage({super.key});
+
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -130,6 +132,8 @@ class AccueilPage extends StatelessWidget {
 }
 
 class ProfilPage extends StatelessWidget {
+  const ProfilPage({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -143,14 +147,16 @@ class ProfilPage extends StatelessWidget {
   }
 }
 
-class MonDossierMedicalPage extends StatelessWidget {
+class DossierMedical extends StatelessWidget {
+  const DossierMedical({super.key});
+
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('Profil'),
-      ),
-      body: const Center(
+    return const Scaffold(
+      // appBar: AppBar(
+      //   title: const Text('Profil'),
+      // ),
+      body: Center(
         child: Text('Contenu de Dossier médical'),
       ),
     );
@@ -159,6 +165,8 @@ class MonDossierMedicalPage extends StatelessWidget {
 
 
 class CodeQRPage extends StatelessWidget {
+  const CodeQRPage({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -174,6 +182,8 @@ class CodeQRPage extends StatelessWidget {
 
 
 class SeDeconnecterPage extends StatelessWidget {
+  const SeDeconnecterPage({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

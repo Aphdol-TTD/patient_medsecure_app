@@ -4,6 +4,8 @@ import 'package:patient_medsecure/widgets/customText.dart';
 import 'package:nb_utils/nb_utils.dart';
 import 'package:flutter/material.dart';
 
+import 'homeScreen.dart';
+
 class LogInScreen extends StatelessWidget {
   const LogInScreen({super.key});
 
@@ -105,10 +107,15 @@ class LogInScreen extends StatelessWidget {
                       Align(
                       alignment: Alignment.centerRight,
                       child: 
-                      AppButton(onTap: (){},color: Colors.cyan,
+                      AppButton(onTap: (){
+                        Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => const HomeScreen()), // Remplacez NextPage par la classe de votre page suivante
+                  );
+                      },color: Colors.cyan,
                         child: Row(
                           mainAxisSize: MainAxisSize.min,
-                          children: [
+                          children: const [
                             Text(
                               "Login",
                               style: TextStyle(
@@ -116,8 +123,8 @@ class LogInScreen extends StatelessWidget {
                                 fontWeight: FontWeight.bold,
                               ),
                             ),
-                            const SizedBox(width: 8),
-                            const Icon(Icons.arrow_right_alt_outlined,color: Colors.white,),
+                            SizedBox(width: 8),
+                            Icon(Icons.arrow_right_alt_outlined,color: Colors.white,),
                           ],
                         ),
                       ).cornerRadiusWithClipRRect(50),
@@ -143,7 +150,7 @@ class LogInScreen extends StatelessWidget {
                                   Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                    builder: (context) => UpdateScreen(),
+                                    builder: (context) => const UpdateScreen(),
                                   ),
                                 );
                                 },

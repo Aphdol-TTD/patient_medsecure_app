@@ -5,7 +5,7 @@ import 'dart:async';
 //import 'homeScreen.dart';
 
 class SplashPage extends StatefulWidget {
-  const SplashPage({Key? key});
+  const SplashPage({super.key});
 
   @override
   _SplashPageState createState() => _SplashPageState();
@@ -21,7 +21,7 @@ class _SplashPageState extends State<SplashPage> {
   Future<void> navigateToHomePage() async {
     await Future.delayed(const Duration(seconds: 10)); // Attendre 2 secondes
     Navigator.of(context).pushReplacement(
-      MaterialPageRoute(builder: (BuildContext context) => Splash2Screen()), // Naviguer vers la page d'accueil après le SplashScreen
+      MaterialPageRoute(builder: (BuildContext context) => const Splash2Screen()), // Naviguer vers la page d'accueil après le SplashScreen
     );
   }
 

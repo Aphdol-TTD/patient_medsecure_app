@@ -16,15 +16,15 @@ class Splash2Screen extends StatelessWidget {
         padding: const EdgeInsets.symmetric(horizontal: 10),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: [
+          children: [Image.asset(
+              'assets/images/aphdol.jpg',
+              fit: BoxFit.cover,
+            ),
              CustomText(
               text: "Let's get started !",
               fontSize: 18,
               fontWeight: FontWeight.w700,
               textAlign: TextAlign.center,
-            ),
-            const SizedBox(
-              height: 20,
             ),
              CustomText(
               text: "Login to enjoy the feature we've provided, and stay healthy",
@@ -84,32 +84,32 @@ class Splash2Screen extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(height:20),
-            Container(
-              height: 50,
-              width: double.maxFinite,
-              decoration: BoxDecoration(
-                color: primaryColor,
-                borderRadius: BorderRadius.circular(50),
-              ),
-              child: TextButton(
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => MenuScreenPage()), // Remplacez NextPage par la classe de votre page suivante
-                  );
-                },
+            // SizedBox(height:20),
+            // Container(
+            //   height: 50,
+            //   width: double.maxFinite,
+            //   decoration: BoxDecoration(
+            //     color: primaryColor,
+            //     borderRadius: BorderRadius.circular(50),
+            //   ),
+            //   child: TextButton(
+            //     onPressed: () {
+            //       Navigator.push(
+            //         context,
+            //         MaterialPageRoute(builder: (context) => MenuScreenPage()), // Remplacez NextPage par la classe de votre page suivante
+            //       );
+            //     },
                 
-                child: CustomText(
-                  text: "home page -->",
-                  color: secondaryColor,
-                  fontSize: 18,
-                  fontWeight: FontWeight.w700,
-                  textAlign: TextAlign.center,
-                ),
-              ),
+            //     child: CustomText(
+            //       text: "home page -->",
+            //       color: secondaryColor,
+            //       fontSize: 18,
+            //       fontWeight: FontWeight.w700,
+            //       textAlign: TextAlign.center,
+            //     ),
+            //   ),
               
-            ),
+            // ),
           ],
         ),
       ),

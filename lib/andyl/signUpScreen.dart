@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:nb_utils/nb_utils.dart';
 
 import '../constants.dart';
 import '../widgets/InputFormWidget.dart';
@@ -22,12 +23,12 @@ class _SignUpScreenState extends State<SignUpScreen> {
   final TextEditingController _telephoneController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
   bool _isPasswordVisible = false;
-  String _selectedSexe = '';
+  final String _selectedSexe = '';
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
-    var padding2 = null;
-    var padding3 = null;
+    var padding2;
+    var padding3;
     return Scaffold(
       body: SingleChildScrollView(
         child: Padding(
@@ -60,9 +61,9 @@ class _SignUpScreenState extends State<SignUpScreen> {
                             children: [
                               TextFormField(
                                 controller: _nomController,
-                                style: TextStyle(color: Colors.black),
+                                style: const TextStyle(color: Colors.black),
                                 cursorColor: Colors.black,
-                                decoration: InputDecoration(
+                                decoration: const InputDecoration(
                                   labelText: 'Nom',
                                   labelStyle: TextStyle(),
                                   enabledBorder: OutlineInputBorder(
@@ -85,12 +86,12 @@ class _SignUpScreenState extends State<SignUpScreen> {
                                 },
                               ),
               
-                              SizedBox(height: 10.0),
+                              const SizedBox(height: 10.0),
                               TextFormField(
                                 controller: _prenomController,
-                                style: TextStyle(color: Colors.black),
+                                style: const TextStyle(color: Colors.black),
                                 cursorColor: Colors.black,
-                                decoration: InputDecoration(
+                                decoration: const InputDecoration(
                                   labelText: 'Prénom',
                                   labelStyle: TextStyle(color: Colors.black),
                                   enabledBorder: OutlineInputBorder(
@@ -113,12 +114,12 @@ class _SignUpScreenState extends State<SignUpScreen> {
                                   return null;
                                 },
                               ),
-                              SizedBox(height: 10.0),
+                              const SizedBox(height: 10.0),
                               TextFormField(
                                 controller: _specialiteController,
-                                style: TextStyle(color: Colors.black),
+                                style: const TextStyle(color: Colors.black),
                                 cursorColor: Colors.black,
-                                decoration: InputDecoration(
+                                decoration: const InputDecoration(
                                   labelText: 'Spécialité',
                                   labelStyle: TextStyle(color: Colors.black),
                                   enabledBorder: OutlineInputBorder(
@@ -137,13 +138,13 @@ class _SignUpScreenState extends State<SignUpScreen> {
                                   return null;
                                 },
                               ),
-                              SizedBox(height: 10.0),
+                              const SizedBox(height: 10.0),
                               TextFormField(
                                 controller: _emailController,
                                 keyboardType: TextInputType.emailAddress,
-                                style: TextStyle(color: Colors.black),
+                                style: const TextStyle(color: Colors.black),
                                 cursorColor: Colors.black,
-                                decoration: InputDecoration(
+                                decoration: const InputDecoration(
                                   labelText: 'Email',
                                   labelStyle: TextStyle(color: Colors.black),
                                   enabledBorder: OutlineInputBorder(
@@ -153,7 +154,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                                     borderSide: BorderSide(color: Colors.green),
                                   ),
                                   prefixIcon: Padding(
-                                    padding: const EdgeInsets.only(left: 8.0),
+                                    padding: EdgeInsets.only(left: 8.0),
                                     child: Icon(
                                       Icons.email,
                                       size: 18.0,
@@ -171,12 +172,12 @@ class _SignUpScreenState extends State<SignUpScreen> {
                                   return null;
                                 },
                               ),
-                              SizedBox(height: 10.0),
+                              const SizedBox(height: 10.0),
                               TextFormField(
                                 controller: _sexeController,
-                                style: TextStyle(color: Colors.black),
+                                style: const TextStyle(color: Colors.black),
                                 cursorColor: Colors.black,
-                                decoration: InputDecoration(
+                                decoration: const InputDecoration(
                                   labelText: 'Sexe',
                                   labelStyle: TextStyle(color: Colors.black),
                                   enabledBorder: OutlineInputBorder(
@@ -196,13 +197,13 @@ class _SignUpScreenState extends State<SignUpScreen> {
                                 
                               ),
               
-                              SizedBox(height: 10.0),
+                              const SizedBox(height: 10.0),
                               TextFormField(
                                 controller: _telephoneController,
                                 keyboardType: TextInputType.phone,
-                                style: TextStyle(color: Colors.black),
+                                style: const TextStyle(color: Colors.black),
                                 cursorColor: Colors.black,
-                                decoration: InputDecoration(
+                                decoration: const InputDecoration(
                                   labelText: 'Téléphone',
                                   labelStyle: TextStyle(color: Colors.black),
                                   enabledBorder: OutlineInputBorder(
@@ -225,23 +226,23 @@ class _SignUpScreenState extends State<SignUpScreen> {
                                   return null;
                                 },
                               ),
-                              SizedBox(height: 10.0),
+                              const SizedBox(height: 10.0),
                               TextFormField(
                                 controller: _passwordController,
                                 obscureText: !_isPasswordVisible,
-                                style: TextStyle(color: Colors.black),
+                                style: const TextStyle(color: Colors.black),
                                 cursorColor: Colors.black,
                                 decoration: InputDecoration(
                                   labelText: 'Mot de passe',
-                                  labelStyle: TextStyle(color: Colors.black),
-                                  enabledBorder: OutlineInputBorder(
+                                  labelStyle: const TextStyle(color: Colors.black),
+                                  enabledBorder: const OutlineInputBorder(
                                     borderSide: BorderSide(color: Colors.green),
                                   ),
-                                  focusedBorder: OutlineInputBorder(
+                                  focusedBorder: const OutlineInputBorder(
                                     borderSide: BorderSide(color: Colors.green),
                                   ),
-                                  prefixIcon: Padding(
-                                    padding: const EdgeInsets.only(left: 8.0),
+                                  prefixIcon: const Padding(
+                                    padding: EdgeInsets.only(left: 8.0),
                                     child: Icon(
                                       Icons.lock,
                                       size: 18.0,
@@ -262,7 +263,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                                     ),
                                   ),
                                   contentPadding:
-                                      EdgeInsets.fromLTRB(16.0, 12.0, 16.0, 12.0),
+                                      const EdgeInsets.fromLTRB(16.0, 12.0, 16.0, 12.0),
                                 ),
                                 validator: (value) {
                                   if (value == null || value.isEmpty) {
@@ -272,38 +273,40 @@ class _SignUpScreenState extends State<SignUpScreen> {
                                   return null;
                                 },
                               ),
-                              SizedBox(height: 20.0),
+                              const SizedBox(height: 20.0),
                             ],
                           ),
                         ),
               ),
-              Container(
-                          padding: const EdgeInsets.symmetric(
-                              horizontal: 10, vertical: 15),
-                              margin: const EdgeInsets.symmetric(horizontal: 30),
-                              width: double.maxFinite,
-                          decoration: BoxDecoration(
-                              color: primaryColor,
-                              borderRadius: BorderRadius.circular(20)),
-                          child: Center(
-                            child: CustomText(
-                              text: "S'inscrire",
-                              color: secondaryColor,fontWeight: FontWeight.bold, padding: padding2,
+              AppButton(onTap: (){},
+                child: Container(
+                            padding: const EdgeInsets.symmetric(
+                                horizontal: 10, vertical: 15),
+                                margin: const EdgeInsets.symmetric(horizontal: 30),
+                                width: double.maxFinite,
+                            decoration: BoxDecoration(
+                                color: primaryColor,
+                                borderRadius: BorderRadius.circular(20)),
+                            child: Center(
+                              child: CustomText(
+                                text: "S'inscrire",
+                                color: secondaryColor,fontWeight: FontWeight.bold, padding: padding2,
+                              ),
+                              
                             ),
-                            
                           ),
-                        ),
-                        SizedBox(height: 20,)
+              ),
+                        const SizedBox(height: 20,)
                         ,TextButton(
                     onPressed: () {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => LogInScreen(),
+                          builder: (context) => const LogInScreen(),
                         ),
                       );
                     },
-                    child: Text(
+                    child: const Text(
                       'Vous êtes déjà inscrit(e) ? Connectez-vous',
                       style: TextStyle(color: Colors.black),
                     ),
